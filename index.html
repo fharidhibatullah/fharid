@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fharid Hibatullah | Hacker Profile</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #020b05;
+    color: #00ff66;
+    font-family: "Courier New", monospace;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.matrix {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    overflow: hidden;
+    opacity: 0.18;
+}
+
+.matrix span {
+    position: absolute;
+    top: -100px;
+    color: #00ff66;
+    font-size: 18px;
+    animation: fall linear infinite;
+}
+
+.matrix span:nth-child(1) { left: 5%; animation-duration: 7s; }
+.matrix span:nth-child(2) { left: 15%; animation-duration: 5s; }
+.matrix span:nth-child(3) { left: 25%; animation-duration: 8s; }
+.matrix span:nth-child(4) { left: 35%; animation-duration: 6s; }
+.matrix span:nth-child(5) { left: 45%; animation-duration: 9s; }
+.matrix span:nth-child(6) { left: 55%; animation-duration: 5s; }
+.matrix span:nth-child(7) { left: 65%; animation-duration: 7s; }
+.matrix span:nth-child(8) { left: 75%; animation-duration: 6s; }
+.matrix span:nth-child(9) { left: 85%; animation-duration: 8s; }
+.matrix span:nth-child(10) { left: 95%; animation-duration: 5s; }
+
+@keyframes fall {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(110vh); }
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+.terminal {
+    border: 1px solid #00ff66;
+    box-shadow:
+        0 0 10px #00ff66,
+        inset 0 0 10px rgba(0,255,102,0.1);
+    background: rgba(0,15,7,0.9);
+}
+
+.terminal-header {
+    padding: 10px 15px;
+    border-bottom: 1px solid #00ff66;
+    background: rgba(0,255,102,0.05);
+}
+
+.terminal-header::before {
+    content: "● ● ●";
+    color: #00ff66;
+    letter-spacing: 5px;
+}
+
+.content {
+    padding: 30px;
+}
+
+.glitch {
+    font-size: clamp(30px,7vw,65px);
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 4px;
+    text-shadow:
+        2px 0 #00ff66,
+        -2px 0 #008833;
+    animation: glitch 2s infinite;
+}
+
+@keyframes glitch {
+    0%,90%,100% { transform: translate(0); }
+    92% { transform: translate(3px,-2px); }
+    94% { transform: translate(-3px,2px); }
+    96% { transform: translate(2px,1px); }
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: 10px;
+    color: #00cc55;
+    font-size: 14px;
+}
+
+.typing {
+    text-align: center;
+    margin: 30px 0;
+    min-height: 25px;
+    color: #b7ffcf;
+}
+
+.cursor {
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.card {
+    border: 1px solid #00aa44;
+    padding: 20px;
+    background: rgba(0,255,102,0.03);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-color: #00ff66;
+    box-shadow: 0 0 15px rgba(0,255,102,0.4);
+    transform: translateY(-3px);
+}
+
+.label {
+    color: #008f3d;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.value {
+    color: #00ff66;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.about {
+    margin-top: 25px;
+    border-left: 3px solid #00ff66;
+    padding: 20px;
+    background: rgba(0,255,102,0.03);
+}
+
+.about-title {
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+.about p {
+    color: #a8eebb;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.status {
+    margin-top: 25px;
+    padding: 15px;
+    border: 1px dashed #00aa44;
+    color: #00ff66;
+}
+
+.online {
+    display: inline-block;
+    width: 9px;
+    height: 9px;
+    background: #00ff66;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00ff66;
+    margin-right: 8px;
+    animation: pulse 1.2s infinite;
+}
+
+@keyframes pulse {
+    50% { opacity: 0.3; }
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #006b30;
+    font-size: 12px;
+}
+
+@media (max-width:600px) {
+    .container {
+        width: 94%;
+        padding: 20px 0;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .glitch {
+        letter-spacing: 2px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="matrix">
+    <span>010101010101</span>
+    <span>101001011010</span>
+    <span>110101001101</span>
+    <span>010110101010</span>
+    <span>101010110101</span>
+    <span>001101011010</span>
+    <span>110010101011</span>
+    <span>010101101010</span>
+    <span>101101001010</span>
+    <span>011010101101</span>
+</div>
+
+<div class="container">
+<div class="terminal">
+
+<div class="terminal-header">
+    TERMINAL // DIGITAL PROFILE
+</div>
+
+<div class="content">
+
+<h1 class="glitch">
+    FHARID HIBATULLAH
+</h1>
+
+<div class="subtitle">
+    [ DIGITAL PROFILE // WHITE HACKER ]
+</div>
+
+<div class="typing">
+    <span id="typingText"></span><span class="cursor">_</span>
+</div>
+
+<div class="grid">
+
+<div class="card">
+    <div class="label">> NAMA</div>
+    <div class="value">FHARID HIBATULLAH</div>
+</div>
+
+<div class="card">
+    <div class="label">> KELAS</div>
+    <div class="value">XI TKJ</div>
+</div>
+
+<div class="card">
+    <div class="label">> UMUR</div>
+    <div class="value">GA ADA YANG TAU</div>
+</div>
+
+<div class="card">
+    <div class="label">> CITA-CITA</div>
+    <div class="value">WHITE HACKER</div>
+</div>
+
+<div class="card">
+    <div class="label">> HOBI</div>
+    <div class="value">COBA COBA DOANG</div>
+</div>
+
+<div class="card">
+    <div class="label">> STATUS</div>
+    <div class="value">LEARNING...</div>
+</div>
+
+</div>
+
+<div class="about">
+
+<div class="about-title">
+    // ABOUT_ME
+</div>
+
+<p>
+    Seorang siswa XI TKJ yang sedang belajar
+    tentang teknologi, komputer, jaringan,
+    dan cybersecurity.
+</p>
+
+<br>
+
+<p>
+    Target:
+    memahami teknologi dari dasar,
+    meningkatkan skill jaringan,
+    dan suatu hari menjadi seorang
+    White Hacker.
+</p>
+
+</div>
+
+<div class="status">
+    <span class="online"></span>
+    SYSTEM STATUS: ONLINE
+</div>
+
+<footer>
+    &lt;/&gt; FHARID HIBATULLAH // 2026
+</footer>
+
+</div>
+</div>
+</div>
+
+<script>
+
+const text = [
+    "Initializing system...",
+    "Loading digital profile...",
+    "Learning networking...",
+    "Exploring cybersecurity...",
+    "Future White Hacker loading..."
+];
+
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+const typingText = document.getElementById("typingText");
+
+function typeEffect() {
+
+    const currentText = text[textIndex];
+
+    if (!deleting) {
+
+        typingText.textContent =
+            currentText.substring(0,charIndex + 1);
+
+        charIndex++;
+
+        if (charIndex === currentText.length) {
+
+            deleting = true;
+
+            setTimeout(typeEffect,1500);
+
+            return;
+        }
+
+    } else {
+
+        typingText.textContent =
+            currentText.substring(0,charIndex - 1);
+
+        charIndex--;
+
+        if (charIndex === 0) {
+
+            deleting = false;
+
+            textIndex++;
+
+            if (textIndex >= text.length) {
+                textIndex = 0;
+            }
+        }
+    }
+
+    setTimeout(typeEffect,deleting ? 40 : 80);
+}
+
+typeEffect();
+
+</script>
+
+</body>
+</html>
